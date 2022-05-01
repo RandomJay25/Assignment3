@@ -13,7 +13,6 @@ jobs:
       
   jay-build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
     - uses: 'actions/checkout@v3'
     - id: 'auth'
@@ -30,5 +29,4 @@ jobs:
       
     - name: 'Deploy to Cloud Run'
       run: gcloud run deploy simple-webserver --image=gcr.io/verdant-cable-284710/simple-webserver:latest --region=us-central1 --allow-unauthenticated --service-account=githubexample@verdant-cable-284710.iam.gserviceaccount.com
-    options:
-      logging: CLOUD_LOGGING_ONLY
+
