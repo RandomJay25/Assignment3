@@ -2,8 +2,6 @@ name: Build Deploy Simple Web Server
 
 on:
   push:
-    paths:
-    - '/**'
 
 jobs:
   demo-parallelism:
