@@ -4,16 +4,16 @@ on:
   push:
 
 jobs:
-  demo-parallelism:
+  demo-jay:
     runs-on: ubuntu-latest
     
     steps:
     - name: 'Bonus Validation'
       run: 'echo Random Jay Assignment 3'
       
-  build-and-deploy:
+  jay-build-and-deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: 'actions/checkout@v3'
     - id: 'auth'
@@ -27,5 +27,7 @@ jobs:
       
     - name: 'Submit to cloud build'
       run: gcloud builds submit --tag gcr.io/verdant-cable-284710/simple-webserver
+      options:
+        logging: CLOUD_LOGGING_ONLY
     - name: 'Deploy to Cloud Run'
       run: gcloud run deploy simple-webserver --image=gcr.io/verdant-cable-284710/simple-webserver:latest --region=us-central1 --allow-unauthenticated --service-account=githubexample@verdant-cable-284710.iam.gserviceaccount.com
