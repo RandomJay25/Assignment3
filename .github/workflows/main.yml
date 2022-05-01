@@ -3,7 +3,7 @@ name: Build Deploy Simple Web Server
 on:
   push:
     paths:
-    - 'docker-samples/simple-webserver/**'
+    - '/**'
 
 jobs:
   demo-parallelism:
